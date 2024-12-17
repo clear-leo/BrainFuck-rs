@@ -55,14 +55,19 @@ fn run_actions(instructions: &Vec<Actions>, array: &mut [u8; MAX_SIZE], pointer:
             Actions::ADD => {
                 if array[pointer.get()] != 255 {
                     array[pointer.get()] += 1;
-                }},
+                }
+            },
             Actions::SUBTRACT => {
                 if array[pointer.get()] != 0 {
                     array[pointer.get()] -= 1;
                 }
             },
-            Actions::LEFT => {pointer.left()},
-            Actions::RIGHT => {pointer.right()},
+            Actions::LEFT => {
+                pointer.left();
+            },
+            Actions::RIGHT => {
+                pointer.right();
+            },
             Actions::LOOPOPEN => {
                 let mut temp_index = index+1;
                 let mut new_instructions: Vec<Actions> = vec![];
@@ -75,9 +80,13 @@ fn run_actions(instructions: &Vec<Actions>, array: &mut [u8; MAX_SIZE], pointer:
                     run_actions(&new_instructions, array, pointer);
                 }
             },
-            Actions::OUTPUT => {print!("{}", (array[pointer.get()]%255) as u8 as char)},
-            Actions::INPUT => {stdout().flush().unwrap_or(()); array[pointer.get()] = get_string().as_bytes()[0]},
-            Actions::NONE | _ => {},
+            Actions::OUTPUT => {
+                print!("{}", (array[pointer.get()]%255) as u8 as char);
+            },
+            Actions::INPUT => {
+                stdout().flush().unwrap_or(()); array[pointer.get()] = get_string().as_bytes()[0];
+            },
+            Actions::NONE | Actions::LOOPCLOSE => {},
         }
     }
 }
