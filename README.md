@@ -1,5 +1,5 @@
 # A brainfuck interpreter fully written in rust
-<br><br>
+Speedy brainfuck interpreter written fully in rust.
 
 # USAGE
 brainfuck [-vh] [file]<br>
