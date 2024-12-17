@@ -1,6 +1,6 @@
-const VERSION: f32 = 0.1;
+pub const VERSION: f32 = 0.1;
 const MAX_SIZE: usize = 30000;
-const UPDATE_DATE: &str = "17/12/2024";
+pub const UPDATE_DATE: &str = "17/12/2024";
 use shittyinput::get_string;
 use std::io::{stdout, Write};
 
