@@ -1,8 +1,10 @@
-# A brainfuck interpreter fully written in rust. <br>
+<b>A brainfuck interpreter fully written in rust</b>
 
-USAGE: brainfuck [-vh] [file]<br>
-    -v --version             Shows version information<br>
-    -h --help                Shows this help message
+
+# USAGE
+brainfuck [-vh] [file]<br>
+    -v --version &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shows version information<br>
+    -h --help &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shows the help message
 
 # Building from source
 Make sure you have cargo installed. <br>
