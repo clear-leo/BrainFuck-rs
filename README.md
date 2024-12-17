@@ -14,7 +14,7 @@ git clone https://github.com/clear-leo/BrainFuck-rs.git
 ```
 cd into the repository and build
 ```sh
-cd BrainFuck-rs/
+cd BrainFuck-rs
 ```
 ```sh
 cargo build --release
@@ -29,7 +29,7 @@ git clone https://github.com/clear-leo/BrainFuck-rs.git
 ```
 cd into the repository and install
 ```sh
-cd BrainFuck-rs/
+cd BrainFuck-rs
 ```
 ```sh
 cargo install --path .
