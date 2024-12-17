@@ -1,4 +1,4 @@
-A brainfuck interpreter fully written in rust. 
-USAGE: brainfuck [-vh] [file]
-    -v --version             Shows version information
-    -h --help                Shows this help message
+A brainfuck interpreter fully written in rust. <br>
+USAGE: brainfuck [-vh] [file]<br>
+    -v --version             Shows version information<br>
+    -h --help                Shows this help message<br>
