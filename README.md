@@ -1,7 +1,7 @@
 # A brainfuck interpreter fully written in rust
 Speedy brainfuck interpreter written fully in rust.
 
-# USAGE
+# Usage
 brainfuck [-vh] [file]<br>
     -v --version &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shows version information<br>
     -h --help &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shows the help message
