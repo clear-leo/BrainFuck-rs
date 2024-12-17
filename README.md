@@ -1,5 +1,5 @@
-<b>A brainfuck interpreter fully written in rust</b>
-
+# A brainfuck interpreter fully written in rust
+<br><br>
 
 # USAGE
 brainfuck [-vh] [file]<br>
