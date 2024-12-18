@@ -7,4 +7,4 @@ description = "A brainfuck interpreter written in rust"
 readme = "README.md"
 
 [dependencies]
-shittyinput = "1.0.0"
+shittyinput = "1.1.1"

@@ -1,6 +1,7 @@
 pub const VERSION: &str = "0.1.0";
 const MAX_SIZE: usize = 30000;
 pub const UPDATE_DATE: &str = "17/12/2024";
+use std::io::stdin;
 use shittyinput::get_string;
 use std::io::{stdout, Write};
 
@@ -21,10 +22,15 @@ pub fn interpret_ui() {
     loop {
         print!(">>> ");
         let _ = stdout().flush();
-        let input = get_string();
+        let mut input = String::new();
+        let bytes_result = stdin().read_line(&mut input).unwrap();
         let input = input.trim();
         if input == "exit" {
             break;
+        }
+        if bytes_result == 0 {
+            println!("");
+            return;
         }
         let instructions = parse(input);
         run_actions(&instructions, &mut array, &mut pointer);
@@ -84,7 +90,7 @@ fn run_actions(instructions: &Vec<Actions>, array: &mut [u8; MAX_SIZE], pointer:
                 print!("{}", (array[pointer.get()]%255) as u8 as char);
             },
             Actions::INPUT => {
-                stdout().flush().unwrap_or(()); array[pointer.get()] = get_string().as_bytes()[0];
+                stdout().flush().unwrap_or(()); array[pointer.get()] = get_string().unwrap().as_bytes()[0];
             },
             Actions::NONE | Actions::LOOPCLOSE => {},
         }
