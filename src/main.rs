@@ -1,18 +1,10 @@
 use std::{env::args ,fs::File, io::Read};
+use brainfuck::handle_error;
 
 const HELP_MSG: &str = r#"USAGE: brainfuck [-vh] [file]
     -v --version             Shows version information
     -h --help                Shows this help message"#;
 
-
-macro_rules! handle_error {
-    ($function:expr) => {
-        match $function {
-            Ok(good) => good,
-            Err(error) => {println!("brainfck: {}", error); return}
-        }
-    };
-}
 
 fn main() {
     let version_msg = format!(r#"VERSION: {} {}

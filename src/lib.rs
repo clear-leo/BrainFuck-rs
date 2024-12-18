@@ -5,7 +5,15 @@ use std::io::stdin;
 use shittyinput::get_string;
 use std::io::{stdout, Write};
 
-
+#[macro_export]
+macro_rules! handle_error {
+    ($function:expr) => {
+        match $function {
+            Ok(good) => good,
+            Err(error) => {println!("brainfck: {}", error); return}
+        }
+    };
+}
 
 pub fn run_str(string: &str) {
     let mut array: [u8; MAX_SIZE] = [0; MAX_SIZE];
@@ -23,7 +31,7 @@ pub fn interpret_ui() {
         print!(">>> ");
         let _ = stdout().flush();
         let mut input = String::new();
-        let bytes_result = stdin().read_line(&mut input).unwrap();
+        let bytes_result = handle_error!(stdin().read_line(&mut input));
         let input = input.trim();
         if input == "exit" {
             break;
@@ -90,7 +98,8 @@ fn run_actions(instructions: &Vec<Actions>, array: &mut [u8; MAX_SIZE], pointer:
                 print!("{}", (array[pointer.get()]%255) as u8 as char);
             },
             Actions::INPUT => {
-                stdout().flush().unwrap_or(()); array[pointer.get()] = get_string().unwrap().as_bytes()[0];
+                handle_error!(stdout().flush());
+                array[pointer.get()] = handle_error!(get_string()).as_bytes()[0];
             },
             Actions::NONE | Actions::LOOPCLOSE => {},
         }
