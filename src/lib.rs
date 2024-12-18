@@ -17,7 +17,7 @@ pub fn run_str(string: &str) {
 pub fn interpret_ui() {
     let mut array: [u8; MAX_SIZE] = [0; MAX_SIZE];
     let mut pointer = Pointer::new();
-    println!("Brainfck interpreter by leo. Version {VERSION} {UPDATE_DATE}");
+    println!("Brainfck interpreter by clearleo. Version {VERSION} {UPDATE_DATE}");
     println!(r#"Type "exit" to exit"#);
     loop {
         print!(">>> ");
